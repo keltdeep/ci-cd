@@ -18,8 +18,6 @@ RUN if [ "${NODE_ENV}" = "prod" ];  \
 
 COPY ./ /usr/app
 
-RUN npm link webpack
-
 RUN npm run build
 
 CMD [ "node", "dist/main.js" ]
