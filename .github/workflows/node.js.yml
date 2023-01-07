@@ -63,8 +63,8 @@ jobs:
             git pull origin main
             rm -R node_modules/
             rm -R dist/
-            npm cache clean --force
-            npm ci
-            npm run build
+#            npm cache clean --force
+#            npm ci
+#            npm run build
             docker-compose build
             docker-compose up -d
