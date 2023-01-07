@@ -1,5 +1,5 @@
 FROM node:16.10-alpine
-ARG NODE_ENV
+ARG NODE_ENV=prod
 
 RUN mkdir /usr/app
 WORKDIR /usr/app
