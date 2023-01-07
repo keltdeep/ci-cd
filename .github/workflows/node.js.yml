@@ -61,8 +61,8 @@ jobs:
             cd /home/cicd/ci-cd
             docker-compose down
             git pull origin main
-            rm -R node_modules/ /p/a/t/h
-            rm -R dist/ /p/a/t/h
+            rm -f -R node_modules/
+            rm -f -R dist/
             npm cache clean --force
             npm ci --only-production
             npm run build
