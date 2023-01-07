@@ -3,7 +3,7 @@ ARG NODE_ENV=prod
 
 RUN mkdir /usr/app
 WORKDIR /usr/app
-RUN apt install npm
+RUN apk add nodejs npm
 
 RUN npm install npm@8.11.0
 RUN rm -rf /usr/local/lib/node_modules/npm
