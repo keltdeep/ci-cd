@@ -12,11 +12,7 @@ RUN mv /usr/app/node_modules/npm /usr/local/lib/node_modules/npm
 COPY package*.json ./
 
 RUN npm cache clean --force
-
-RUN if [ "${NODE_ENV}" = "prod" ];  \
-    then RUN npm ci --only=production && echo "npm prod"; \
-    else RUN npm i && echo "npm dev";  \
-    fi
+RUN npm ci --only=production
 
 COPY ./ /usr/app
 
