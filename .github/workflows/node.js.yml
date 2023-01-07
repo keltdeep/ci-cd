@@ -17,7 +17,6 @@ jobs:
     strategy:
       matrix:
         node-version: [ 16.10 ]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v3
@@ -59,7 +58,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: 22
           script: |
-            cd /home/cicd/cicd/
+            cd /home/cicd/ci-cd
             git pull origin main
             docker-compose build
             docker-compose up -d
