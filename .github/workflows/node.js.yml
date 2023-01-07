@@ -60,5 +60,9 @@ jobs:
           script: |
             cd /home/cicd/ci-cd
             git pull origin main
+            rm -R node_modules/
+            rm -R dist/
+            npm ci
+            npm run build
             docker-compose build
             docker-compose up -d
