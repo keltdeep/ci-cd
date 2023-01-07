@@ -1,5 +1,5 @@
 FROM node:16.10-alpine
-ARG NODE_ENV=prod
+ARG NODE_ENV
 
 RUN mkdir /usr/app
 WORKDIR /usr/app
@@ -10,7 +10,9 @@ RUN rm -rf /usr/local/lib/node_modules/npm
 RUN mv /usr/app/node_modules/npm /usr/local/lib/node_modules/npm
 
 COPY package*.json ./
+
 RUN npm cache clean --force
+
 RUN if [ "${NODE_ENV}" = "prod" ];  \
     then npm ci --only=production && echo "npm prod"; \
     else npm i && echo "npm dev";  \
