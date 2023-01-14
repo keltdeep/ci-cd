@@ -59,7 +59,7 @@ jobs:
           port: 22
           script: |
             cd /home/cicd/ci-cd
-            docker-compose down
+            docker-compose -f docker-compose.prod.yml down
             git pull origin main
-            docker-compose build
-            docker-compose up -d
+            docker-compose -f docker-compose.prod.yml build
+            docker-compose -f docker-compose.prod.yml up -d --no-build

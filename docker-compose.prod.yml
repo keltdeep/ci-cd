@@ -7,12 +7,12 @@ services:
     build:
       context: .
       args:
-        NODE_ENV: 'dev'
+        NODE_ENV: 'prod'
       dockerfile: Dockerfile
     ports:
       - 3000:3000
     volumes:
       - .:/usr/app
       - /usr/app/node_modules
-    command: sh -c "npm run start:dev"
+    command: sh -c "npm run start"
     restart: unless-stopped

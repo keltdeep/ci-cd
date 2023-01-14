@@ -21,9 +21,3 @@ RUN if [ "$NODE_ENV" = "prod" ]; then \
     fi
 
 COPY ./ /usr/app
-
-RUN if [ "$NODE_ENV" = "prod" ]; then \
-      npm run start; \
-    else \
-      npm run start:dev; \
-    fi
