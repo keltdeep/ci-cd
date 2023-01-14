@@ -16,6 +16,7 @@ RUN npm cache clean --force
 
 RUN if [ "$NODE_ENV" = "prod" ]; then \
       npm ci --only=production; \
+      echo "$NODE_ENV"; \
     else \
       npm i; \
     fi
